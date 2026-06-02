@@ -13,6 +13,8 @@ export const personalInfo = {
     github: "https://github.com/Prosunsajal4",
     linkedin: "https://www.linkedin.com/in/prosun-mukherjee-sajal/",
     portfolio: "https://prosunsajal4.github.io/",
+    facebook: "https://www.facebook.com/sajalprosun",
+    instagram: "https://www.instagram.com/prosun_mukherjee_sajal",
   },
 };
 

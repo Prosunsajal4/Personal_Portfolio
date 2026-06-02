@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Mail, MapPin, Phone, Send, Github, Linkedin, Globe, CheckCircle2 } from "lucide-react";
+import { Mail, MapPin, Phone, Send, Github, Linkedin, Globe, CheckCircle2, Facebook, Instagram } from "lucide-react";
 import { personalInfo } from "@/lib/data";
 
 export default function Contact() {
@@ -101,6 +101,16 @@ export default function Contact() {
                   href={personalInfo.socials.portfolio}
                   label="Portfolio"
                   icon={<Globe size={16} />}
+                />
+                <SocialBtn
+                  href={personalInfo.socials.facebook}
+                  label="Facebook"
+                  icon={<Facebook size={16} />}
+                />
+                <SocialBtn
+                  href={personalInfo.socials.instagram}
+                  label="Instagram"
+                  icon={<Instagram size={16} />}
                 />
               </div>
             </div>

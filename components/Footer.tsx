@@ -1,6 +1,6 @@
 "use client";
 
-import { Github, Linkedin, Globe, Mail, Heart } from "lucide-react";
+import { Github, Linkedin, Globe, Mail, Heart, Facebook, Instagram } from "lucide-react";
 import { personalInfo } from "@/lib/data";
 
 export default function Footer() {
@@ -106,6 +106,24 @@ export default function Footer() {
                 className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-foreground/80 hover:text-white hover:bg-white/10 transition"
               >
                 <Mail size={18} />
+              </a>
+              <a
+                href={personalInfo.socials.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-foreground/80 hover:text-white hover:bg-white/10 transition"
+              >
+                <Facebook size={18} />
+              </a>
+              <a
+                href={personalInfo.socials.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-foreground/80 hover:text-white hover:bg-white/10 transition"
+              >
+                <Instagram size={18} />
               </a>
             </div>
             <a

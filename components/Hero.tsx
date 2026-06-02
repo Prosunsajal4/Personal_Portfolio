@@ -10,6 +10,8 @@ import {
   Mail,
   MapPin,
   Phone,
+  Facebook,
+  Instagram,
 } from "lucide-react";
 import { personalInfo } from "@/lib/data";
 
@@ -182,6 +184,18 @@ export default function Hero() {
                 label="Portfolio"
               >
                 <Globe size={18} />
+              </SocialIcon>
+              <SocialIcon
+                href={personalInfo.socials.facebook}
+                label="Facebook"
+              >
+                <Facebook size={18} />
+              </SocialIcon>
+              <SocialIcon
+                href={personalInfo.socials.instagram}
+                label="Instagram"
+              >
+                <Instagram size={18} />
               </SocialIcon>
             </div>
           </motion.div>
