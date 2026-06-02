@@ -73,6 +73,13 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 All content lives in **`lib/data.ts`** — update your name, email, social links,
 skills, projects, and education there.
 
+**Current social links configured:**
+- GitHub: https://github.com/Prosunsajal4
+- LinkedIn: https://www.linkedin.com/in/prosun-mukherjee-sajal/
+- Portfolio: https://prosunsajal4.github.io/
+- Facebook: https://www.facebook.com/sajalprosun
+- Instagram: https://www.instagram.com/prosun_mukherjee_sajal
+
 To change the resume link, replace `public/resume.pdf` with your own file
 (keep the same filename).
 
