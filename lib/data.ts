@@ -18,25 +18,67 @@ export const personalInfo = {
   },
 };
 
+export const services = [
+  {
+    title: "Frontend Development",
+    description:
+      "Building responsive, accessible, and performant user interfaces with React, Next.js, and modern CSS.",
+    icon: "palette",
+  },
+  {
+    title: "Backend Development",
+    description:
+      "Designing robust REST APIs and server-side logic with Node.js, Express.js, and MongoDB.",
+    icon: "server",
+  },
+  {
+    title: "Full-Stack Apps",
+    description:
+      "End-to-end development of scalable web applications with authentication, databases, and deployment.",
+    icon: "layers",
+  },
+];
+
 export const skills = {
   Languages: [
-    "JavaScript",
-    "TypeScript",
-    "Python",
-    "Java",
-    "C",
-    "C++",
-    "MATLAB",
+    { name: "JavaScript", level: 85 },
+    { name: "TypeScript", level: 70 },
+    { name: "Python", level: 60 },
+    { name: "Java", level: 55 },
+    { name: "C", level: 50 },
+    { name: "C++", level: 50 },
+    { name: "MATLAB", level: 45 },
   ],
-  Frontend: ["React.js", "Next.js", "Tailwind CSS", "HTML", "CSS"],
-  Backend: ["Node.js", "Express.js", "REST APIs", "JWT", "Firebase Auth"],
-  Database: ["MongoDB", "Firebase"],
-  Tools: ["Git", "GitHub", "Postman", "Vercel"],
+  Frontend: [
+    { name: "React.js", level: 88 },
+    { name: "Next.js", level: 75 },
+    { name: "Tailwind CSS", level: 90 },
+    { name: "HTML", level: 95 },
+    { name: "CSS", level: 90 },
+  ],
+  Backend: [
+    { name: "Node.js", level: 82 },
+    { name: "Express.js", level: 80 },
+    { name: "REST APIs", level: 85 },
+    { name: "JWT", level: 70 },
+    { name: "Firebase Auth", level: 65 },
+  ],
+  Database: [
+    { name: "MongoDB", level: 78 },
+    { name: "Firebase", level: 65 },
+  ],
+  Tools: [
+    { name: "Git", level: 85 },
+    { name: "GitHub", level: 88 },
+    { name: "Postman", level: 80 },
+    { name: "Vercel", level: 75 },
+  ],
 };
 
 export const projects = [
   {
-    title: "SkillMatchAI – AI-Based Job Matching Platform",
+    title: "SkillMatchAI",
+    subtitle: "AI-Based Job Matching Platform",
     description:
       "Developed an AI-based job matching system with personalized skill recommendations and a real-time analytics dashboard, improving match accuracy and boosting user engagement by 30%.",
     tech: ["Next.js", "Node.js", "Express.js", "MongoDB"],
@@ -48,9 +90,11 @@ export const projects = [
     live: "https://skillmatchai-phi.vercel.app/",
     github: "https://github.com/Prosunsajal4/SkillMatchAI",
     featured: true,
+    color: "from-indigo-500 to-purple-600",
   },
   {
-    title: "BookCourier – Online Book Selling Platform",
+    title: "BookCourier",
+    subtitle: "Online Book Selling Platform",
     description:
       "Developed a scalable online book selling platform with React and Node.js, implementing RBAC, secure authentication, protected routing, and responsive UI components to enhance user experience.",
     tech: ["React", "Node.js", "Express.js", "MongoDB"],
@@ -62,13 +106,13 @@ export const projects = [
     live: "#",
     github: "#",
     featured: true,
+    color: "from-emerald-500 to-teal-600",
   },
 ];
 
 export const education = [
   {
-    degree:
-      "BSc in Electronics and Communication Engineering",
+    degree: "BSc in Electronics and Communication Engineering",
     institution: "Khulna University",
     period: "2023 – Present",
     location: "Khulna",

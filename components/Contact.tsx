@@ -2,7 +2,18 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Mail, MapPin, Phone, Send, Github, Linkedin, Globe, CheckCircle2, Facebook, Instagram } from "lucide-react";
+import {
+  Mail,
+  MapPin,
+  Phone,
+  Send,
+  Github,
+  Linkedin,
+  Globe,
+  CheckCircle2,
+  Facebook,
+  Instagram,
+} from "lucide-react";
 import { personalInfo } from "@/lib/data";
 
 export default function Contact() {
@@ -19,9 +30,7 @@ export default function Contact() {
     e.preventDefault();
     if (!form.name || !form.email || !form.message) return;
     setStatus("sending");
-    const subject = encodeURIComponent(
-      `Portfolio Contact from ${form.name}`
-    );
+    const subject = encodeURIComponent(`Portfolio Contact from ${form.name}`);
     const body = encodeURIComponent(
       `Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`
     );
@@ -43,75 +52,67 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           className="max-w-2xl"
         >
-          <p className="text-sm uppercase tracking-[0.2em] text-primary-400 font-mono">
+          <p className="text-sm uppercase tracking-[0.25em] text-indigo-400 font-mono">
             05 — Contact
           </p>
-          <h2 className="mt-3 section-title">
-            Let&apos;s build something <span className="gradient-text">great</span>
+          <h2 className="mt-4 section-title">
+            Let&apos;s build something{" "}
+            <span className="gradient-text">great</span>
           </h2>
-          <p className="mt-4 text-foreground/70">
+          <p className="mt-4 text-foreground/60">
             Have a project in mind, a job opportunity, or just want to say hi?
             My inbox is always open.
           </p>
         </motion.div>
 
-        <div className="mt-12 grid lg:grid-cols-5 gap-6">
-          {/* Info */}
+        <div className="mt-14 grid lg:grid-cols-5 gap-6">
+          {/* Info cards */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.5 }}
-            className="lg:col-span-2 space-y-4"
+            className="lg:col-span-2 space-y-3"
           >
-            <InfoItem
+            <InfoCard
               icon={<Mail size={18} />}
               label="Email"
               value={personalInfo.email}
               href={`mailto:${personalInfo.email}`}
             />
-            <InfoItem
+            <InfoCard
               icon={<Phone size={18} />}
               label="Phone"
               value={personalInfo.phone}
               href={`tel:${personalInfo.phone.replace(/\s/g, "")}`}
             />
-            <InfoItem
+            <InfoCard
               icon={<MapPin size={18} />}
               label="Location"
               value={personalInfo.location}
             />
 
+            {/* Socials */}
             <div className="glass-card p-5">
-              <p className="text-xs uppercase tracking-wider text-foreground/60">
-                Follow me
+              <p className="text-[11px] uppercase tracking-[0.2em] text-foreground/45 mb-3">
+                Connect
               </p>
-              <div className="mt-3 flex items-center gap-2">
-                <SocialBtn
-                  href={personalInfo.socials.github}
-                  label="GitHub"
-                  icon={<Github size={16} />}
-                />
-                <SocialBtn
-                  href={personalInfo.socials.linkedin}
-                  label="LinkedIn"
-                  icon={<Linkedin size={16} />}
-                />
-                <SocialBtn
-                  href={personalInfo.socials.portfolio}
-                  label="Portfolio"
-                  icon={<Globe size={16} />}
-                />
-                <SocialBtn
-                  href={personalInfo.socials.facebook}
-                  label="Facebook"
-                  icon={<Facebook size={16} />}
-                />
-                <SocialBtn
-                  href={personalInfo.socials.instagram}
-                  label="Instagram"
-                  icon={<Instagram size={16} />}
-                />
+              <div className="flex items-center gap-1.5 flex-wrap">
+                <SocialBtn href={personalInfo.socials.github} label="GitHub">
+                  <Github size={16} />
+                </SocialBtn>
+                <SocialBtn href={personalInfo.socials.linkedin} label="LinkedIn">
+                  <Linkedin size={16} />
+                </SocialBtn>
+                <SocialBtn href={personalInfo.socials.portfolio} label="Portfolio">
+                  <Globe size={16} />
+                </SocialBtn>
+                <SocialBtn href={personalInfo.socials.facebook} label="Facebook">
+                  <Facebook size={16} />
+                </SocialBtn>
+                <SocialBtn href={personalInfo.socials.instagram} label="Instagram">
+                  <Instagram size={16} />
+                </SocialBtn>
               </div>
             </div>
           </motion.div>
@@ -126,7 +127,7 @@ export default function Contact() {
             className="lg:col-span-3 glass-card p-6 md:p-8"
           >
             <div className="grid sm:grid-cols-2 gap-4">
-              <Field
+              <InputField
                 label="Your name"
                 name="name"
                 type="text"
@@ -135,7 +136,7 @@ export default function Contact() {
                 onChange={handleChange}
                 required
               />
-              <Field
+              <InputField
                 label="Your email"
                 name="email"
                 type="email"
@@ -146,7 +147,7 @@ export default function Contact() {
               />
             </div>
             <div className="mt-4">
-              <label className="block text-xs uppercase tracking-wider text-foreground/60 mb-1.5">
+              <label className="block text-[11px] uppercase tracking-[0.2em] text-foreground/45 mb-2">
                 Message
               </label>
               <textarea
@@ -156,22 +157,22 @@ export default function Contact() {
                 value={form.message}
                 onChange={handleChange}
                 placeholder="Hi Prosun, I'd love to talk about..."
-                className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-foreground/40 outline-none transition focus:border-primary-500/60 focus:bg-white/10"
+                className="input-field resize-none"
               />
             </div>
             <div className="mt-5 flex items-center justify-between gap-3 flex-wrap">
-              <p className="text-xs text-foreground/55">
+              <p className="text-xs text-foreground/40">
                 I&apos;ll respond within 24 hours.
               </p>
               <button
                 type="submit"
                 disabled={status === "sending"}
-                className="btn-primary disabled:opacity-60"
+                className="btn-primary disabled:opacity-50"
               >
                 {status === "sent" ? (
                   <>
                     <CheckCircle2 size={16} />
-                    Message sent
+                    Sent!
                   </>
                 ) : status === "sending" ? (
                   "Sending..."
@@ -190,26 +191,21 @@ export default function Contact() {
   );
 }
 
-function Field({
+function InputField({
   label,
   ...props
-}: {
-  label: string;
-} & React.InputHTMLAttributes<HTMLInputElement>) {
+}: { label: string } & React.InputHTMLAttributes<HTMLInputElement>) {
   return (
     <div>
-      <label className="block text-xs uppercase tracking-wider text-foreground/60 mb-1.5">
+      <label className="block text-[11px] uppercase tracking-[0.2em] text-foreground/45 mb-2">
         {label}
       </label>
-      <input
-        {...props}
-        className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-foreground/40 outline-none transition focus:border-primary-500/60 focus:bg-white/10"
-      />
+      <input {...props} className="input-field" />
     </div>
   );
 }
 
-function InfoItem({
+function InfoCard({
   icon,
   label,
   value,
@@ -221,38 +217,30 @@ function InfoItem({
   href?: string;
 }) {
   const inner = (
-    <div className="glass-card p-5 flex items-center gap-4 hover:border-white/20 transition">
-      <div className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500 to-accent-500 text-white shadow-lg">
+    <div className="glass-card-hover p-4 flex items-center gap-3.5">
+      <div className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 text-white shadow-lg shadow-indigo-500/20">
         {icon}
       </div>
       <div>
-        <p className="text-xs uppercase tracking-wider text-foreground/60">
+        <p className="text-[11px] uppercase tracking-[0.15em] text-foreground/45">
           {label}
         </p>
-        <p className="text-sm md:text-base font-medium text-white break-all">
-          {value}
-        </p>
+        <p className="text-sm font-medium text-white break-all">{value}</p>
       </div>
     </div>
   );
-  if (href) {
-    return (
-      <a href={href} className="block">
-        {inner}
-      </a>
-    );
-  }
+  if (href) return <a href={href} className="block">{inner}</a>;
   return inner;
 }
 
 function SocialBtn({
   href,
   label,
-  icon,
+  children,
 }: {
   href: string;
   label: string;
-  icon: React.ReactNode;
+  children: React.ReactNode;
 }) {
   return (
     <a
@@ -260,9 +248,9 @@ function SocialBtn({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-foreground/80 transition hover:bg-white/10 hover:text-white"
+      className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-foreground/60 transition-all duration-300 hover:bg-white/10 hover:text-white hover:border-white/20"
     >
-      {icon}
+      {children}
     </a>
   );
 }
